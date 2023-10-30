@@ -31,7 +31,7 @@ def save_output(protocol, ip_address, content):
                     try:
                         filehandle.write(protocol + "://" + ip_address + l.get("href") + "\n")
                         if download_files:
-                            if l.get("href") is not "/":
+                            if l.get("href") != "/":
                                 if not os.path.isdir(os.path.join(os.getcwd(), 'output', ip_address)):
                                     print("Creating download directory")
                                     os.mkdir(os.path.join(os.getcwd(), 'output', ip_address))
