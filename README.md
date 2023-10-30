@@ -2,6 +2,7 @@
 Python tool to scan a single IP or CIDR range of IP addresses for open directories
                                  
 ## Usage
+```
 usage: OpenDirScanner [-h] [-r RANGE] [-i IP_ADDRESS] [-t THREADS] [-e] [-d]
 
 Script to scan a range of IP addresses in CIDR format for Open Directories
@@ -19,3 +20,4 @@ options:
   -d, --download_files  Automatically download found links
 
 Do not pwn what you do not own
+```
