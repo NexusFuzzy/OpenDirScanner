@@ -1,16 +1,7 @@
 # OpenDirScanner
 Python tool to scan a single IP or CIDR range of IP addresses for open directories
-
-
-  ____                   _____  _      _____                                 
- / __ \                 |  __ \(_)    / ____|                                
-| |  | |_ __   ___ _ __ | |  | |_ _ _| (___   ___ __ _ _ __  _ __   ___ _ __ 
-| |  | | '_ \ / _ \ '_ \| |  | | | '__\___ \ / __/ _` | '_ \| '_ \ / _ \ '__|
-| |__| | |_) |  __/ | | | |__| | | |  ____) | (_| (_| | | | | | | |  __/ |   
- \____/| .__/ \___|_| |_|_____/|_|_| |_____/ \___\__,_|_| |_|_| |_|\___|_|   
-       | |                                                                   
-       |_|                                                                   
-
+                                 
+## Usage
 usage: OpenDirScanner [-h] [-r RANGE] [-i IP_ADDRESS] [-t THREADS] [-e] [-d]
 
 Script to scan a range of IP addresses in CIDR format for Open Directories
