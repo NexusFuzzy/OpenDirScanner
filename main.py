@@ -29,7 +29,10 @@ def save_output(protocol, ip_address, content):
             with open(os.path.join(os.getcwd(), 'output', protocol + "_" + ip_address + "_links.txt"), 'w') as filehandle:
                 for l in links:
                     try:
-                        filehandle.write(protocol + "://" + ip_address + l.get("href") + "\n")
+                        if l.get("href").startswith("/"):
+                            filehandle.write(protocol + "://" + ip_address + l.get("href") + "\n")
+                        else:
+                            filehandle.write(protocol + "://" + ip_address + "/" + l.get("href") + "\n")
                         if download_files:
                             if l.get("href") != "/":
                                 if not os.path.isdir(os.path.join(os.getcwd(), 'output', ip_address)):
@@ -37,7 +40,10 @@ def save_output(protocol, ip_address, content):
                                     os.mkdir(os.path.join(os.getcwd(), 'output', ip_address))
                                 file_path = os.path.join(os.getcwd(), 'output', ip_address, l.get("href").replace("\\", "").replace("/", ""))
                                 print("Storing downloaded file to: " + file_path)
-                                urllib.request.urlretrieve(protocol + "://" + ip_address + l.get("href"), file_path)
+                                if l.get("href").startswith("/"):
+                                    urllib.request.urlretrieve(protocol + "://" + ip_address + l.get("href"), file_path)
+                                else:
+                                    urllib.request.urlretrieve(protocol + "://" + ip_address + "/" + l.get("href"), file_path)
                     except Exception as ex:
                         print("Couldn't store downloaded file :" + str(ex))
     except Exception as ex_write_output:
