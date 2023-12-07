@@ -55,7 +55,7 @@ def scan(ip_address):
     for protocol in protocols:
         try:
             print("Now trying " + ip_address + " via " + protocol.upper())
-            result = requests.get(protocol + "://" + ip_address, timeout=5)
+            result = requests.get(protocol + "://" + ip_address, timeout=5, verify=False)
             if result.status_code == 200:
                 if "Index of".upper() in result.text.upper() or "Last modified".upper() in result.text.upper():
                     save_output(protocol, ip_address, result.text)
