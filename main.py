@@ -7,6 +7,8 @@ import requests
 from pyfiglet import Figlet
 from bs4 import BeautifulSoup
 import urllib.request
+import warnings
+warnings.filterwarnings('ignore', message='Unverified HTTPS request')
 
 pool = ThreadPoolExecutor(max_workers=10)
 extract_links = False
